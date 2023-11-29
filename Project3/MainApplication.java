@@ -451,7 +451,6 @@ class StartButton extends JButton implements MouseListener {
 
 /////////////////Scoreboard 
 
-
 class playername implements Comparable<playername> {
     private String name;
     private int score;
