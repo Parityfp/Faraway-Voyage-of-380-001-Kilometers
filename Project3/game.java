@@ -36,7 +36,7 @@ class game extends JPanel implements Runnable
     //game initialization
     public static final int WIDTH = 1366;
     public static final int HEIGHT = 768;
-    public static String TITLE = "Faraway Voyage of 380 001 Kilometers";
+    public static String TITLE = "Faraway Voyage of 830 001 Kilometers";
     private String difficulty, username, password;
     private float volume;
 
