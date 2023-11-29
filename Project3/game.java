@@ -403,7 +403,7 @@ class game extends JPanel implements Runnable
         timeLabel.setText("Time: " + gameTickCounter/60);
         if (shooting  && !enemies.isEmpty()) {
             Enemy targetEnemy;
-
+            //magnet
             if (bulletCounter % bulletThreshold == 0) {
                 targetEnemy = enemies.get(0); 
                 if (p.getUpgrades() == 0) {
