@@ -146,30 +146,38 @@ class game extends JPanel implements Runnable
                 enemySpawnThreshold = 300;
                 pspeed = 1.5;
                 plasmaCooldown = 120;
+                enemyHpMultiplier = 0.2;
                 break;
             case "Easy":
                 enemySpawnThreshold = 150;
                 shootingEnemyCooldown = 240;
                 pspeed = 2;
                 plasmaCooldown = 105;
+                enemyHpMultiplier = 0.5;
+
                 break;
             case "Normal":
                 enemySpawnThreshold = 60;
                 shootingEnemyCooldown = 180;
                 pspeed = 2;
                 plasmaCooldown = 90;
+                enemyHpMultiplier = 0.75;
                 break;
             case "hard":
                 enemySpawnThreshold = 45;
                 shootingEnemyCooldown = 120;
                 pspeed = 2;
                 plasmaCooldown = 60;
+                enemyHpMultiplier = 1;
+
                 break;
             case "Lunatic":
                 enemySpawnThreshold = 30;
                 shootingEnemyCooldown = 60;
                 pspeed = 3;
                 plasmaCooldown = 45;
+                enemyHpMultiplier = 1.2;
+
                 break;
             default:
                 enemySpawnThreshold = 50;
@@ -193,8 +201,6 @@ class game extends JPanel implements Runnable
                     } 
             }
             if (e instanceof DefaultEnemy)items.add(new point(this, e.getX(), e.getY(), enemyType));
-
-
         }
         Iterator<Bullet> bulletIterator = bullets.iterator();
         while (bulletIterator.hasNext()) {
@@ -466,7 +472,7 @@ class game extends JPanel implements Runnable
         //System.out.println("Cycle tick" + currentCycleTick);
         if (currentCycleTick == plasmaTimer + 120 && HertaSpawn <100) kurukuru.SFX(MyConstants.FILE_KURUKURU, false, 1f * volume);
         if (currentCycleTick == cycleLength - 1) {  
-            enemyHpMultiplier++;
+            enemyHpMultiplier = enemyHpMultiplier * 1.15;
             System.out.println("Cycle completed" + HertaSpawn);
         if (HertaSpawn <100) { // chance for Herta to spawn every cycle
             double x = new Random().nextDouble() * (WIDTH - 50);
