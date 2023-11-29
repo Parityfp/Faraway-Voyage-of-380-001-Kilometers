@@ -28,12 +28,11 @@ class MainApplication extends JFrame {
     private static String selectedDifficulty = "Lunatic";
     private static MySoundEffect title;
     private JSlider volumeSlider;
-    private static float volume;
+    private static float volume = 0.5f;
     
-
     public MainApplication() {
         requestFocus();
-        setTitle("Faraway Voyage of 380 001 Kilometers: Main Menu");
+        setTitle("Faraway Voyage of 830 000 Kilometers: Main Menu");
         setBounds(200, 200, 620, 400);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -42,14 +41,14 @@ class MainApplication extends JFrame {
         contentPane = new JPanel();
         setContentPane(contentPane);
         contentPane.setLayout(null);
-
+        
         startButton = new StartButton(null);
         contentPane.add(startButton);
 
         // Combo box for diffculties
         String[] difficulties = { "Baby", "Easy", "Normal", "Hard", "Lunatic" };
         JComboBox<String> difficultyComboBox = new JComboBox<>(difficulties);
-        difficultyComboBox.setBounds(250, 20, 150, 30);
+        difficultyComboBox.setBounds(450, 5, 150, 30);
         contentPane.add(difficultyComboBox);
         difficultyComboBox.setSelectedItem("Lunatic");
         difficultyComboBox.addActionListener(new ActionListener() {
@@ -65,8 +64,9 @@ class MainApplication extends JFrame {
 
         // Volume slider
         volumeSlider = new JSlider(JSlider.HORIZONTAL, 0, 100, 50);
-        volumeSlider.setBounds(350, 100, 200, 30);
+        volumeSlider.setBounds(15, 135, 200, 30);
         contentPane.add(volumeSlider);
+        volumeSlider.setOpaque(false);
         volumeSlider.addChangeListener(new ChangeListener() {
             @Override
                 public void stateChanged(ChangeEvent e) {
@@ -88,13 +88,13 @@ class MainApplication extends JFrame {
         passwordField = new JPasswordField();
         authPanel.add(passwordField);
 
-        authPanel.setBounds(-30, 150, 300, 100);
+        authPanel.setBounds(-50, 280, 300, 100);
         contentPane.add(authPanel);
         authPanel.setOpaque(false);
-
+        
         // Credits button
         creditsButton = new JButton("Credits");
-        creditsButton.setBounds(490, 320, 130, 30);
+        creditsButton.setBounds(470, 325, 130, 30);
         contentPane.add(creditsButton);
 
         creditsButton.addActionListener(new ActionListener() {
@@ -105,7 +105,7 @@ class MainApplication extends JFrame {
         });
         // Guide button
         guideButton = new JButton("Guide");
-        guideButton.setBounds(490, 280, 130, 30);
+        guideButton.setBounds(470, 285, 130, 30);
         contentPane.add(guideButton);
 
         guideButton.addActionListener(new ActionListener() {
@@ -117,7 +117,7 @@ class MainApplication extends JFrame {
 
         // Scoreboard button
         scoresButton = new JButton("Scoreboard");
-        scoresButton.setBounds(490, 240, 130, 30);
+        scoresButton.setBounds(470, 245, 130, 30);
         contentPane.add(scoresButton);
 
         scoresButton.addActionListener(new ActionListener() {
@@ -131,19 +131,23 @@ class MainApplication extends JFrame {
         tb = new JToggleButton[2];
         tb[0] = new JRadioButton("Mute");
         tb[0].setName("Mute");
+        tb[0].setForeground(Color.WHITE);
         tb[1] = new JRadioButton("Unmute");
         tb[1].setName("Unmute");
         tb[1].setSelected(true);
-
+        tb[1].setForeground(Color.WHITE);
         // add to group so ensure cant deselect
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(tb[0]);
         buttonGroup.add(tb[1]);
 
-        tb[0].setBounds(50, 100, 100, 30);
-        tb[1].setBounds(200, 100, 100, 30);
+        tb[0].setBounds(30, 100, 100, 30);
+        tb[1].setBounds(130, 100, 100, 30);
         contentPane.add(tb[0]);
         contentPane.add(tb[1]);
+        tb[0].setOpaque(false);
+        tb[1].setOpaque(false);
+
 
         tb[0].addItemListener(new ItemListener() {
             @Override
@@ -340,8 +344,10 @@ class MainApplication extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new MainApplication();
+            MainApplication mainapp = new MainApplication();
+            mainapp.setResizable(false); 
         });
+        System.out.println(System.getProperty("java.version"));
         scoreboard sb = new scoreboard();
         for (playername p : sb.getAllPlayers()) {
             System.out.println(p); // Assuming player class has a meaningful toString() method
