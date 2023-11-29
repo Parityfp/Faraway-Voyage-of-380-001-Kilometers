@@ -7,3 +7,5 @@ Touhou-Inspired danmaku game in Java
 
 Inspired by 東方紺珠伝　～ Legacy of Lunatic Kingdom
 --
+
+[Development Repository](https://github.com/Parityfp/Jproject3)
