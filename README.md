@@ -22,10 +22,12 @@ cd <desired file path>
 git clone https://github.com/Parityfp/Faraway-Voyage-of-830000-Kilometers
 ```
 
-3. change PATH variables in source.java to match your system.
+3. change PATH Strings in source.java to match your system.
 
 4. Run the game using MainApplication.java
 
 
 additional notes:
-for those wanting to import only the package, drag JProject3 into your desired maven java project.
+for those wanting to import only the package, drag Project3 into your desired maven java project.
+
+fun little project I made in 5 days
