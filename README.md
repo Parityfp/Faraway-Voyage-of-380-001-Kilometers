@@ -12,7 +12,7 @@ Inspired by 東方紺珠伝　～ Legacy of Lunatic Kingdom
 
 Installation guide:
 
-1. [Install Git](https://git-scm.com/downloads), [Install Java 20](https://www.oracle.com/java/technologies/javase/jdk20-archive-downloads.html).
+1. [Install Git](https://git-scm.com/downloads), [Install JDK 20](https://www.oracle.com/java/technologies/javase/jdk20-archive-downloads.html).
 
 2. Run the following commands in your terminal:
 ```bash
@@ -31,3 +31,5 @@ additional notes:
 for those wanting to import only the package, drag Project3 into your desired maven java project.
 
 fun little project I made in 5 days
+
+the code sucks please do not copy it
