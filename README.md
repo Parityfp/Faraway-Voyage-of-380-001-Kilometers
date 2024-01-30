@@ -10,6 +10,8 @@ Inspired by 東方紺珠伝　～ Legacy of Lunatic Kingdom
 
 [Development Repository](https://github.com/Parityfp/Jproject3)
 
+[Demo Video](https://www.youtube.com/watch?v=fwKsov0vC7M)
+
 Installation guide:
 
 1. [Install Git](https://git-scm.com/downloads), [Install JDK 20](https://www.oracle.com/java/technologies/javase/jdk20-archive-downloads.html).
@@ -30,6 +32,6 @@ git clone https://github.com/Parityfp/Faraway-Voyage-of-830000-Kilometers
 additional notes:
 for those wanting to import only the package, drag Project3 into your desired maven java project.
 
-fun little project I made in 5 days
+fun little project I made in 5 days (without sleep)
 
 the code sucks please do not copy it
